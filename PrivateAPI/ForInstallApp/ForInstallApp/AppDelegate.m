@@ -15,6 +15,39 @@
     // Override point for customization after application launch.
     return YES;
 }
+
+//打包在<ForInstallApp1.ipa>里面
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
+//    NSLog(@"URL scheme:%@", [url scheme]);
+//    NSLog(@"URL query: %@", [url query]);
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"URL openURL"
+//                                                    message:[NSString stringWithFormat:
+//                                                             @"result for:\r\n %@--%@--%@", sourceApplication, [url scheme], [url query]]
+//                                                   delegate:self cancelButtonTitle:@"Ok"
+//                                          otherButtonTitles:nil];
+//    [alert show];
+//    
+//    return YES;
+//}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    NSLog(@"Application handleOpenURL: %@", [url absoluteString]);
+    NSLog(@"URL scheme:%@", [url scheme]);
+    NSLog(@"URL query: %@", [url query]);
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"URL handleOpenURL"
+                                                    message:[NSString stringWithFormat:
+                                                             @"result for:\r\n %@--%@--%@", [url absoluteString], [url scheme], [url query]]
+                                                   delegate:self cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+    return YES;
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

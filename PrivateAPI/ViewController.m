@@ -9,9 +9,12 @@
 #import "ViewController.h"
 
 #import "AppInstall.h"
+#import "QHFIleHelper.h"
 
-#define MYURLSCHEME @"chenapp:"
-#define MYCHENAPP @"ForInstallApp"
+#define MYURLSCHEME @"chenapp://"
+#define MYCHENAPPNAME @"ForInstallApp"
+#define MYCHENAPPTYPE @"ipa"
+#define MYCHENAPP @"ForInstallApp.ipa"
 
 @interface ViewController ()
 
@@ -23,42 +26,74 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(10, 40, setS(100), setS(30))];
-    btn.layer.masksToBounds = YES;
-    btn.layer.cornerRadius = 6.0;
-    btn.layer.borderWidth = 1.0;
-    btn.layer.borderColor = [[UIColor whiteColor] CGColor];
-    
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:MYURLSCHEME]])//urltypes:urlSchemes
+    int yy = 40;
+    for (int i = 1 ; i <= 2; i++)
     {
-        [btn setTitle:@"打开ForInstallApp" forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor greenColor]];
-    }else
-    {
-        [btn setTitle:@"安装ForInstallApp" forState:UIControlStateNormal];
-        [btn setBackgroundColor:[UIColor orangeColor]];
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setFrame:CGRectMake(10, yy, setS(250), setS(30))];
+        btn.layer.masksToBounds = YES;
+        btn.layer.cornerRadius = setS(6.0);
+        btn.layer.borderWidth = 1.0;
+        btn.layer.borderColor = [[UIColor whiteColor] CGColor];
+        btn.tag = i;
+        
+        switch (i)
+        {
+            case 1:
+            {
+                [btn setTitle:@"移动ForInstallApp到document" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor orangeColor]];
+                [btn addTarget:self action:@selector(moveFileToDocument:) forControlEvents:UIControlEventTouchUpInside];
+                break;
+            }
+            case 2:
+            {
+                if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:MYURLSCHEME]])//urltypes:urlSchemes
+                {
+                    [btn setTitle:@"打开ForInstallApp" forState:UIControlStateNormal];
+                    [btn setBackgroundColor:[UIColor greenColor]];
+                }else
+                {
+                    [btn setTitle:@"安装ForInstallApp" forState:UIControlStateNormal];
+                    [btn setBackgroundColor:[UIColor orangeColor]];
+                }
+                [btn addTarget:self action:@selector(installApp:) forControlEvents:UIControlEventTouchUpInside];
+                break;
+            }
+            default:
+            {
+                [btn setTitle:@"未知" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor redColor]];
+                break;
+            }
+        }
+        [self.view addSubview:btn];
+        
+        yy += btn.frame.size.height + 5;
     }
-    [self.view addSubview:btn];
-    [btn addTarget:self action:@selector(installApp:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)installApp:(UIButton *)btn
 {
     if ([[btn titleLabel].text isEqualToString:@"打开ForInstallApp"])
     {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:MYURLSCHEME]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[MYURLSCHEME stringByAppendingString:@"?token=29140723"]]];
         return;
     }
     [btn setUserInteractionEnabled:NO];
     [btn setTitle:@"安装中..." forState:UIControlStateNormal];
+    [btn setBackgroundColor:[UIColor orangeColor]];
     __async_opt__, ^
     {
-        NSString *path = [[NSBundle mainBundle] pathForResource:MYCHENAPP ofType:@"ipa"];
+//        NSString *path = [[NSBundle mainBundle] pathForResource:MYCHENAPP ofType:@"ipa"];
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *path = [documentsDirectory stringByAppendingPathComponent:MYCHENAPP];
+        
 //        NSLog(@"start install:%@", path);
         int i = -999;
-        if (path != nil)
+        if (path != nil && [QHFIleHelper isEixtFile:path])
             i = [AppInstall IPAInstall:path];
 //        NSLog(@"install result:%d", i);
         __async_main__, ^
@@ -87,6 +122,20 @@
             [btn setUserInteractionEnabled:YES];
         });
     });
+}
+
+- (void)moveFileToDocument:(UIButton *)btn
+{
+    int i = [QHFIleHelper moveFileToDocument:MYCHENAPPNAME type:MYCHENAPPTYPE];
+    if (i == 1)
+    {
+        [btn setTitle:@"移动成功" forState:UIControlStateNormal];
+        [btn setBackgroundColor:[UIColor greenColor]];
+    }else
+    {
+        [btn setTitle:@"移动失败" forState:UIControlStateNormal];
+        [btn setBackgroundColor:[UIColor redColor]];
+    }
 }
 
 @end

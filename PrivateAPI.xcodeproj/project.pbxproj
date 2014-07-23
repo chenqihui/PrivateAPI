@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74379F29197F54B9002950F2 /* QHFIleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 74379F28197F54B9002950F2 /* QHFIleHelper.m */; };
 		74969C3C197E395B002F8AFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74969C3B197E395B002F8AFF /* Foundation.framework */; };
 		74969C3E197E395B002F8AFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74969C3D197E395B002F8AFF /* CoreGraphics.framework */; };
 		74969C40197E395B002F8AFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74969C3F197E395B002F8AFF /* UIKit.framework */; };
@@ -52,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		74379F27197F54B9002950F2 /* QHFIleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHFIleHelper.h; sourceTree = "<group>"; };
+		74379F28197F54B9002950F2 /* QHFIleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHFIleHelper.m; sourceTree = "<group>"; };
 		74969C38197E395B002F8AFF /* PrivateAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74969C3B197E395B002F8AFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		74969C3D197E395B002F8AFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,6 +149,8 @@
 				74969C54197E395B002F8AFF /* ViewController.m */,
 				74969C77197E7251002F8AFF /* AppInstall.h */,
 				74969C78197E7251002F8AFF /* AppInstall.m */,
+				74379F27197F54B9002950F2 /* QHFIleHelper.h */,
+				74379F28197F54B9002950F2 /* QHFIleHelper.m */,
 				74969C56197E395B002F8AFF /* Images.xcassets */,
 				74969C42197E395B002F8AFF /* Supporting Files */,
 			);
@@ -316,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74379F29197F54B9002950F2 /* QHFIleHelper.m in Sources */,
 				74969C55197E395B002F8AFF /* ViewController.m in Sources */,
 				74969C4C197E395B002F8AFF /* AppDelegate.m in Sources */,
 				74969C48197E395B002F8AFF /* main.m in Sources */,

@@ -47,8 +47,15 @@ typedef int (*MobileInstallationInstall)(NSString *path, NSDictionary *dict, voi
         MobileInstallationInstall pMobileInstallationInstall = (MobileInstallationInstall)dlsym(lib, "MobileInstallationInstall");
         if (pMobileInstallationInstall)
         {
-            int ret = pMobileInstallationInstall(path, [NSDictionary dictionaryWithObject:@"User" forKey:@"ApplicationType"], nil, path);
+            //复制一个，解决原始安装包不会被删除
+            NSString *name = [@"Install_" stringByAppendingString:path.lastPathComponent];
+            NSString* tempPath = [NSTemporaryDirectory() stringByAppendingPathComponent:name];
+            if (![[NSFileManager defaultManager] copyItemAtPath:path toPath:tempPath error:nil])
+                return -1;
+            
+            int ret = pMobileInstallationInstall(tempPath, [NSDictionary dictionaryWithObject:@"User" forKey:@"ApplicationType"], nil, path);
             dlclose(lib);
+            
             return ret;
         }
     }

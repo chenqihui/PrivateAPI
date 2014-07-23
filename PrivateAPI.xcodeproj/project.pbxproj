@@ -24,7 +24,6 @@
 		74969C68197E395B002F8AFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74969C66197E395B002F8AFF /* InfoPlist.strings */; };
 		74969C6A197E395B002F8AFF /* PrivateAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 74969C69197E395B002F8AFF /* PrivateAPITests.m */; };
 		74969C74197E3AFE002F8AFF /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 74969C73197E3AFE002F8AFF /* entitlements.plist */; };
-		74969C79197E7251002F8AFF /* AppInstall.m in Sources */ = {isa = PBXBuildFile; fileRef = 74969C78197E7251002F8AFF /* AppInstall.m */; };
 		74969CC0197E8E30002F8AFF /* ForInstallApp.ipa in Resources */ = {isa = PBXBuildFile; fileRef = 74969CBF197E8E30002F8AFF /* ForInstallApp.ipa */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +76,6 @@
 		74969C69197E395B002F8AFF /* PrivateAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivateAPITests.m; sourceTree = "<group>"; };
 		74969C73197E3AFE002F8AFF /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		74969C77197E7251002F8AFF /* AppInstall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInstall.h; sourceTree = "<group>"; };
-		74969C78197E7251002F8AFF /* AppInstall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstall.m; sourceTree = "<group>"; };
 		74969C7A197E72E1002F8AFF /* QHViewTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHViewTag.h; sourceTree = "<group>"; };
 		74969CBF197E8E30002F8AFF /* ForInstallApp.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = ForInstallApp.ipa; sourceTree = "<group>"; };
 		74969CC1197E8F62002F8AFF /* ForInstallApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ForInstallApp.xcodeproj; path = PrivateAPI/ForInstallApp/ForInstallApp.xcodeproj; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				74969C53197E395B002F8AFF /* ViewController.h */,
 				74969C54197E395B002F8AFF /* ViewController.m */,
 				74969C77197E7251002F8AFF /* AppInstall.h */,
-				74969C78197E7251002F8AFF /* AppInstall.m */,
 				74379F27197F54B9002950F2 /* QHFIleHelper.h */,
 				74379F28197F54B9002950F2 /* QHFIleHelper.m */,
 				74969C56197E395B002F8AFF /* Images.xcassets */,
@@ -325,7 +322,6 @@
 				74969C55197E395B002F8AFF /* ViewController.m in Sources */,
 				74969C4C197E395B002F8AFF /* AppDelegate.m in Sources */,
 				74969C48197E395B002F8AFF /* main.m in Sources */,
-				74969C79197E7251002F8AFF /* AppInstall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

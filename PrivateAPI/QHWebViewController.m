@@ -96,6 +96,16 @@
             
             //此为调用js里面的函数的方法
             [webView stringByEvaluatingJavaScriptFromString:@"getCurrentUser('5201314')"];
+            
+            //此为js添加函数的方法
+            [webView stringByEvaluatingJavaScriptFromString:@"var script = document.createElement('script');"
+             "script.type = 'text/javascript';"
+             "script.text = \"function myFunction() { "
+             "alert('hello myFunction');"
+             "}\";"
+             "document.getElementsByTagName('head')[0].appendChild(script);"];
+            
+//            [webView stringByEvaluatingJavaScriptFromString:@"myFunction();"];
         }
         return NO;
     }else if ([components count] > 1 && [(NSString *)[components objectAtIndex:0] isEqualToString:@"chenapp"])

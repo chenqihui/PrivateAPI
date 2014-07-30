@@ -9,8 +9,10 @@
 #ifndef KGKit_ViewTag_h
 #define KGKit_ViewTag_h
 
-#define kNOTIFICATION_REFRESHREWARDWALL  @"NOTIFICATION_REFRESHREWARDWALL"
-
+/************************************ 宏定义 ************************************/
+/* { 设备类型 } */
+#define isIpad      ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+#define isIphone5   ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640.f, 1136.f), [[UIScreen mainScreen] currentMode].size) : NO)
 #define isIos7      ([[[UIDevice currentDevice] systemVersion] floatValue])
 #define StatusbarSize ((isIos7 >= 7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)?20.f:0.f)
 
@@ -27,5 +29,25 @@
 /* { 倍数 } */
 #define _20bei(f) (f*2.f)
 #define setS(b) isIpad?(b*2.f):b
+
+#define __iphone_width__     (320.f)
+/* { iPhone5 lenght+78.f } */
+#define __iphone_height__    (isIphone5?568.f:480.f)
+
+/* { webview hide shadow } */
+#define HideShadow(_view) \
+for (UIView *subView in [_view subviews]) \
+{ \
+if ([subView isKindOfClass:[UIScrollView class]]) \
+{ \
+for (UIView *shadowView in [subView subviews]) \
+{ \
+if ([shadowView isKindOfClass:[UIImageView class]]) \
+{ \
+shadowView.hidden = YES; \
+} \
+} \
+} \
+}
 
 #endif

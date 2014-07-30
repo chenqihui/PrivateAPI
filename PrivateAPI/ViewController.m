@@ -11,6 +11,8 @@
 #import "AppInstall.h"
 #import "QHFIleHelper.h"
 
+#import "QHWebViewController.h"
+
 #define MYURLSCHEME @"chenapp://"
 #define MYCHENAPPNAME @"ForInstallApp"
 #define MYCHENAPPTYPE @"ipa"
@@ -27,7 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     int yy = 40;
-    for (int i = 1 ; i <= 2; i++)
+    for (int i = 1 ; i <= 3; i++)
     {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setFrame:CGRectMake(10, yy, setS(250), setS(30))];
@@ -58,6 +60,13 @@
                     [btn setBackgroundColor:[UIColor orangeColor]];
                 }
                 [btn addTarget:self action:@selector(installApp:) forControlEvents:UIControlEventTouchUpInside];
+                break;
+            }
+            case 3:
+            {
+                [btn setTitle:@"进入php" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor greenColor]];
+                [btn addTarget:self action:@selector(enterWeb:) forControlEvents:UIControlEventTouchUpInside];
                 break;
             }
             default:
@@ -136,6 +145,13 @@
         [btn setTitle:@"移动失败" forState:UIControlStateNormal];
         [btn setBackgroundColor:[UIColor redColor]];
     }
+}
+
+- (void)enterWeb:(UIButton *)btn
+{
+    QHWebViewController *webVC = [[QHWebViewController alloc] init];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:webVC];
+    [self presentViewController:navC animated:YES completion:nil];
 }
 
 @end

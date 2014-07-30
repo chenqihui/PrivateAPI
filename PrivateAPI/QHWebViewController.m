@@ -89,8 +89,13 @@
     {
         if([(NSString *)[components objectAtIndex:1] isEqualToString:@"alert"])
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert from Cocoa Touch" message:[components objectAtIndex:2] delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-                                  [alert show];
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Alert from Cocoa Touch" message:[components objectAtIndex:2] delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+//                                  [alert show];
+//            NSLog(@"%@", requestString);
+//            [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"function getCurrentUser(){'%@'}", @"var t1=3;t1 = t1+2;alert(t1);"]];
+            
+            //此为调用js里面的函数的方法
+            [webView stringByEvaluatingJavaScriptFromString:@"getCurrentUser('5201314')"];
         }
         return NO;
     }else if ([components count] > 1 && [(NSString *)[components objectAtIndex:0] isEqualToString:@"chenapp"])
@@ -108,7 +113,9 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    NSLog(@"webViewDidFinishLoad");
     [bbsIndicatorView stopAnimating];
+//    [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@"getCurrentUser(){'%@'}", @"var t1=3;t1 = t1+2;alert(t1);"]];
 }
 
 @end

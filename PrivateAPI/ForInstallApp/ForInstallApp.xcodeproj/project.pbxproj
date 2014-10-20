@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740A0D3A19F4BD7D00730EB6 /* InstallAppPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 740A0D3919F4BD7D00730EB6 /* InstallAppPlist.plist */; };
 		74969C88197E84DF002F8AFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74969C87197E84DF002F8AFF /* Foundation.framework */; };
 		74969C8A197E84DF002F8AFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74969C89197E84DF002F8AFF /* CoreGraphics.framework */; };
 		74969C8C197E84DF002F8AFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74969C8B197E84DF002F8AFF /* UIKit.framework */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		740A0D3919F4BD7D00730EB6 /* InstallAppPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InstallAppPlist.plist; sourceTree = "<group>"; };
 		74969C84197E84DF002F8AFF /* ForInstallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForInstallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74969C87197E84DF002F8AFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		74969C89197E84DF002F8AFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +135,7 @@
 				74969C90197E84DF002F8AFF /* InfoPlist.strings */,
 				74969C93197E84DF002F8AFF /* main.m */,
 				74969C95197E84DF002F8AFF /* ForInstallApp-Prefix.pch */,
+				740A0D3919F4BD7D00730EB6 /* InstallAppPlist.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				74969C9E197E84DF002F8AFF /* Main_iPad.storyboard in Resources */,
 				74969CA3197E84DF002F8AFF /* Images.xcassets in Resources */,
+				740A0D3A19F4BD7D00730EB6 /* InstallAppPlist.plist in Resources */,
 				74969C9B197E84DF002F8AFF /* Main_iPhone.storyboard in Resources */,
 				74969C92197E84DF002F8AFF /* InfoPlist.strings in Resources */,
 			);
@@ -474,6 +478,7 @@
 				74969CBB197E84DF002F8AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74969CBC197E84DF002F8AFF /* Build configuration list for PBXNativeTarget "ForInstallAppTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +487,7 @@
 				74969CBE197E84DF002F8AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

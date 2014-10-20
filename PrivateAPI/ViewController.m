@@ -12,6 +12,7 @@
 #import "QHFIleHelper.h"
 
 #import "QHWebViewController.h"
+#import "JSWebViewController.h"
 
 #define MYURLSCHEME @"chenapp://"
 #define MYCHENAPPNAME @"ForInstallApp"
@@ -29,7 +30,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     int yy = 40;
-    for (int i = 1 ; i <= 3; i++)
+    for (int i = 1 ; i <= 4; i++)
     {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setFrame:CGRectMake(10, yy, setS(250), setS(30))];
@@ -69,6 +70,13 @@
                 [btn addTarget:self action:@selector(enterWeb:) forControlEvents:UIControlEventTouchUpInside];
                 break;
             }
+            case 4:
+            {
+                [btn setTitle:@"进入js调用php" forState:UIControlStateNormal];
+                [btn setBackgroundColor:[UIColor greenColor]];
+                [btn addTarget:self action:@selector(enterJSWeb) forControlEvents:UIControlEventTouchUpInside];
+                break;
+            }
             default:
             {
                 [btn setTitle:@"未知" forState:UIControlStateNormal];
@@ -81,6 +89,8 @@
         yy += btn.frame.size.height + 5;
     }
 }
+
+#pragma mark - action
 
 - (void)installApp:(UIButton *)btn
 {
@@ -151,6 +161,13 @@
 {
     QHWebViewController *webVC = [[QHWebViewController alloc] init];
     UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:webVC];
+    [self presentViewController:navC animated:YES completion:nil];
+}
+
+- (void)enterJSWeb
+{
+    JSWebViewController *jsWebVC = [[JSWebViewController alloc] init];
+    UINavigationController *navC = [[UINavigationController alloc] initWithRootViewController:jsWebVC];
     [self presentViewController:navC animated:YES completion:nil];
 }
 

@@ -51,7 +51,7 @@
 
 - (void)setup
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://chenhello.sinaapp.com/loginReturn.php"]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/%@", SinaPath, @"loginReturn.php"]];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [bbsWebView loadRequest:request];
 }

@@ -50,4 +50,7 @@ shadowView.hidden = YES; \
 } \
 }
 
+#define MyLocationPth @"192.168.1.153/cqh"
+#define SinaPath @"chenhello.sinaapp.com"
+
 #endif

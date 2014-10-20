@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740A0D3519F4AF7B00730EB6 /* JSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 740A0D3419F4AF7B00730EB6 /* JSWebViewController.m */; };
+		740A0D3E19F4CFA200730EB6 /* InstallAppPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 740A0D3C19F4CFA200730EB6 /* InstallAppPlist.plist */; };
+		740A0D3F19F4CFA200730EB6 /* JSWeb.php in Resources */ = {isa = PBXBuildFile; fileRef = 740A0D3D19F4CFA200730EB6 /* JSWeb.php */; };
 		74256900197F944C00A3ADF4 /* AppInstall.m in Sources */ = {isa = PBXBuildFile; fileRef = 742568FF197F944C00A3ADF4 /* AppInstall.m */; };
 		74379F29197F54B9002950F2 /* QHFIleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 74379F28197F54B9002950F2 /* QHFIleHelper.m */; };
 		743CE59B1988ED8E00088914 /* QHWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 743CE59A1988ED8E00088914 /* QHWebViewController.m */; };
@@ -54,6 +57,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		740A0D3319F4AF7B00730EB6 /* JSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSWebViewController.h; sourceTree = "<group>"; };
+		740A0D3419F4AF7B00730EB6 /* JSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSWebViewController.m; sourceTree = "<group>"; };
+		740A0D3C19F4CFA200730EB6 /* InstallAppPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InstallAppPlist.plist; sourceTree = "<group>"; };
+		740A0D3D19F4CFA200730EB6 /* JSWeb.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = JSWeb.php; sourceTree = "<group>"; };
 		742568FF197F944C00A3ADF4 /* AppInstall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInstall.m; sourceTree = "<group>"; };
 		74379F27197F54B9002950F2 /* QHFIleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHFIleHelper.h; sourceTree = "<group>"; };
 		74379F28197F54B9002950F2 /* QHFIleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHFIleHelper.m; sourceTree = "<group>"; };
@@ -110,6 +117,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		740A0D3B19F4CF8700730EB6 /* WebServer */ = {
+			isa = PBXGroup;
+			children = (
+				740A0D3C19F4CFA200730EB6 /* InstallAppPlist.plist */,
+				740A0D3D19F4CFA200730EB6 /* JSWeb.php */,
+			);
+			name = WebServer;
+			path = webServer;
+			sourceTree = "<group>";
+		};
 		74969C2F197E395B002F8AFF = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +173,9 @@
 				742568FF197F944C00A3ADF4 /* AppInstall.m */,
 				74379F27197F54B9002950F2 /* QHFIleHelper.h */,
 				74379F28197F54B9002950F2 /* QHFIleHelper.m */,
+				740A0D3319F4AF7B00730EB6 /* JSWebViewController.h */,
+				740A0D3419F4AF7B00730EB6 /* JSWebViewController.m */,
+				740A0D3B19F4CF8700730EB6 /* WebServer */,
 				74969C56197E395B002F8AFF /* Images.xcassets */,
 				74969C42197E395B002F8AFF /* Supporting Files */,
 			);
@@ -304,9 +324,11 @@
 			files = (
 				74969C52197E395B002F8AFF /* Main_iPad.storyboard in Resources */,
 				74969CC0197E8E30002F8AFF /* ForInstallApp.ipa in Resources */,
+				740A0D3F19F4CFA200730EB6 /* JSWeb.php in Resources */,
 				74969C57197E395B002F8AFF /* Images.xcassets in Resources */,
 				74969C4F197E395B002F8AFF /* Main_iPhone.storyboard in Resources */,
 				74969C74197E3AFE002F8AFF /* entitlements.plist in Resources */,
+				740A0D3E19F4CFA200730EB6 /* InstallAppPlist.plist in Resources */,
 				74969C46197E395B002F8AFF /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +354,7 @@
 				74969C4C197E395B002F8AFF /* AppDelegate.m in Sources */,
 				74969C48197E395B002F8AFF /* main.m in Sources */,
 				74256900197F944C00A3ADF4 /* AppInstall.m in Sources */,
+				740A0D3519F4AF7B00730EB6 /* JSWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,6 +33,18 @@ function openAppLink()
 }
 </script>
 
+<script type="text/javascript">
+	function try_to_open_app()
+	{
+		window.location = "chenapp:open";
+		setTimeout( 
+			function()
+			{ 
+				window.location="itms-apps://itunes.apple.com/cn/app/wang-yi-xin-wen/id425349261?mt=8";
+			} , 100);
+	}
+</script>
+
 	<!--自己的plist，无效证书，此部分需要有效的证书-->
 <a href="javascript:clickLink();">Install App by Safari</>
 	<br/>
@@ -49,12 +61,16 @@ function openAppLink()
 <a href="itms-services:///?action=download-manifest&url=http://192.168.1.153/cqh/InstallAppPlist.plist">test App by Safari</>
 	<br>
 	<br>
-	<!--无法在网页上直接跳转APP Store-->
-<a href="itunesapp://itunes.apple.com/cn/app/wang-yi-xin-wen/id425349261?mt=8">direct open ItunesStore</>
+	<!--在网页上直接跳转APP Store-->
+<a href="itms-apps://itunes.apple.com/cn/app/wang-yi-xin-wen/id425349261?mt=8">direct open ItunesStore</>
 	<br>
 	<br>
-	<!--直接打开安装（越狱版PP助手）-->
-<a id="setupBtn" class="jailbreak-ipad-btn" href="itms-services://?action=download-manifest&amp;url=https://sslapi.25pp.com/version/PPHelperNS_g.plist">PP</a>
+	<!--在网页直接打开安装（越狱版PP助手）-->
+<a href="itms-services://?action=download-manifest&amp;url=https://sslapi.25pp.com/version/PPHelperNS_g.plist">PP</a>
+	<br>
+	<br>
+	<!--在网页直接打开，打不开就跳转到appstore-->
+<a href="javascript:try_to_open_app();">open app, if fail, to appstore</a>
 
 
 </body>

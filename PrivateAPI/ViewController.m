@@ -114,6 +114,7 @@
         int i = -999;
         if (path != nil && [QHFIleHelper isEixtFile:path])
             i = [AppInstall IPAInstall:path];
+        
 //        NSLog(@"install result:%d", i);
         __async_main__, ^
         {
